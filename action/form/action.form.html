@@ -1,0 +1,140 @@
+<div class="page-header">
+  <h1>{{ actionFormVm.mode === 'create' ? 'Create' : 'Edit' }} Action</h1>
+</div>
+
+<form name="actionForm" novalidate>
+  <div
+    class="form-group"
+    ng-class="{ 'has-error': actionForm.name.$invalid && actionFormVm.actionFormSubmitAttempted }"
+  >
+    <label>Action Name</label>
+    <input
+      class="form-control"
+      type="text"
+      name="name"
+      ng-model="actionFormVm.action.name"
+      required
+    >
+
+    <div ng-messages="actionForm.name.$error" ng-show="actionFormVm.actionFormSubmitAttempted">
+      <p ng-message="required" class="text-danger">
+        Required
+      </p>
+    </div>
+
+  </div>
+</form>
+
+<hr />
+
+<form name="outcomeForm" novalidate>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>Add Outcome</h3>
+    </div>
+
+    <div class="panel-body">
+      <div
+        class="form-group"
+        ng-class="{ 'has-error': outcomeForm.name.$invalid && actionFormVm.outcomeFormSubmitAttempted }"
+      >
+        <label>Name</label>
+        <input
+          class="form-control"
+          type="text"
+          name="name"
+          ng-model="actionFormVm.tempOutcome.name"
+          required
+        >
+
+        <div ng-messages="outcomeForm.name.$error" ng-show="actionFormVm.outcomeFormSubmitAttempted">
+          <p ng-message="required" class="text-danger">
+            Required
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="form-group"
+        ng-class="{ 'has-error': outcomeForm.expectedUtility.$invalid && actionFormVm.outcomeFormSubmitAttempted }"
+      >
+        <label>Expected Utility</label>
+        <input
+          class="form-control"
+          type="number"
+          name="expectedUtility"
+          ng-model="actionFormVm.tempOutcome.expectedUtility"
+          required
+        >
+
+        <div ng-messages="outcomeForm.expectedUtility.$error" ng-show="actionFormVm.outcomeFormSubmitAttempted">
+          <p ng-message="required" class="text-danger">
+            Required
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="form-group"
+        ng-class="{ 'has-error': outcomeForm.probability.$invalid && actionFormVm.outcomeFormSubmitAttempted }"
+      >
+        <label>Probability of Outcome Happening (%)</label>
+        <input
+          class="form-control"
+          type="number"
+          name="probability"
+          ng-model="actionFormVm.tempOutcome.probability"
+          min="0"
+          max="100"
+          step="1"
+          required
+        >
+
+        <div ng-messages="outcomeForm.probability.$error" ng-show="actionFormVm.outcomeFormSubmitAttempted">
+          <p ng-message="required" class="text-danger">Required</p>
+          <p ng-message="min" class="text-danger">Probability must be >= 0.</p>
+          <p ng-message="max" class="text-danger">Probability must be <= 100.</p>
+        </div>
+      </div>
+
+      <div>
+        <button
+          class="btn btn-default"
+          type="button"
+          ng-click="actionFormVm.addOutcome(outcomeForm.$valid)"
+        >
+          Add Outcome
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<hr />
+
+<ev-outcomes
+  outcomes="actionFormVm.action.outcomes"
+  remove="true"
+></ev-outcomes>
+
+<hr />
+
+<div>
+  <button
+    ng-if="actionFormVm.mode === 'create'"
+    class="btn btn-primary btn-block"
+    type="button"
+    ng-click="actionFormVm.createAction(actionForm.$valid)"
+  >
+    Create Action
+  </button>
+  <button
+    ng-if="actionFormVm.mode === 'edit'"
+    class="btn btn-primary btn-block"
+    type="button"
+    ng-click="actionFormVm.updateAction(actionForm.$valid)"
+  >
+    Update Action
+  </button>
+</div>
+<br />

@@ -1,0 +1,6 @@
+{
+  "preset": "airbnb",
+  "requirePaddingNewLinesAfterBlocks": false,
+  "safeContextKeyword": ["vm", "_this", "self"],
+  "maximumLineLength": 9999,
+}

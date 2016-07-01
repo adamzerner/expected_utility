@@ -1,0 +1,7 @@
+a, .glyphicon {
+  cursor: pointer;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+  width: 900px;
+}

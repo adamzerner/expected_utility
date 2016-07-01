@@ -1,0 +1,24 @@
+<div>
+  <h3>Outcomes:</h3>
+
+  <p ng-show="!outcomes || outcomes.length === 0">
+    No outcomes have been added.
+  </p>
+
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="outcome in outcomes">
+      <p><strong>Name: </strong>{{ outcome.name }}</p>
+      <p><strong>Expected Utility: </strong>{{ outcome.expectedUtility }}</p>
+      <p><strong>Probability of Occurring: </strong>{{ outcome.probability }}</p>
+      <p ng-if="remove === 'true'">
+        <button
+          class="btn btn-danger btn-xs"
+          type="button"
+          ng-click="removeOutcome($index)"
+        >
+          Remove Outcome
+        </button>
+      </p>
+    </li>
+  </ul>
+</div>

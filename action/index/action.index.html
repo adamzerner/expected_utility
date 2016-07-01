@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>List of Actions</h1>
+</div>
+
+<p ng-if="indexActionVm.actions && !indexActionVm.actions[0]">
+  No actions.
+</p>
+
+<table class="table" ng-hide="indexActionVm.actions && !indexActionVm.actions[0]">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Expected Utility</th>
+      <th>Chart of Outcomes</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Compare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="action in indexActionVm.actions">
+      <td><a ui-sref="show({ id: action.id })">{{ action.name }}</a></td>
+      <td>{{ action.expectedUtility }}</td>
+      <td>
+        <span ng-click="indexActionVm.showOutcomesChart(action.outcomes)" class="glyphicon glyphicon-stats"></span>
+      </td>
+      <td>
+        <a ui-sref="edit({ id: action.id })"><span class="glyphicon glyphicon-edit"></span></a>
+      </td>
+      <td>
+        <span ng-click="indexActionVm.deleteAction(action.id)" class="glyphicon glyphicon-trash text-danger"></span>
+      </td>
+      <td>
+        <input type="checkbox">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <button class="btn btn-default pull-right">Compare</button>
+</div>
