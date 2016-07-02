@@ -9,7 +9,7 @@
   function evOutcomesChart() {
     return {
       restrict: 'E',
-      templateUrl: '/outcomes_chart/outcomes.chart.directive.html',
+      templateUrl: 'outcomes_chart/outcomes.chart.directive.html',
       scope: {
         outcomes: '=?',
         series: '=?',

@@ -9,7 +9,7 @@
   function evSimulationTable() {
     return {
       restrict: 'E',
-      templateUrl: '/simulation/simulation_table.directive.html',
+      templateUrl: 'simulation/simulation_table.directive.html',
       scope: {
         simulationData: '=',
       },

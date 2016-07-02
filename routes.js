@@ -8,32 +8,32 @@
 
   function setUpRoutes($urlRouterProvider, $locationProvider, $stateProvider) {
     $urlRouterProvider.otherwise('/');
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
 
     $stateProvider
       .state('create', {
         url: '/create',
-        templateUrl: '/action/form/action.form.html',
+        templateUrl: 'action/form/action.form.html',
         controller: 'ActionFormCtrl as actionFormVm',
       })
       .state('edit', {
         url: '/edit/:id',
-        templateUrl: '/action/form/action.form.html',
+        templateUrl: 'action/form/action.form.html',
         controller: 'ActionFormCtrl as actionFormVm',
       })
       .state('index', {
         url: '/',
-        templateUrl: '/action/index/action.index.html',
+        templateUrl: 'action/index/action.index.html',
         controller: 'IndexActionCtrl as indexActionVm',
       })
       .state('show', {
         url: '/show/:id',
-        templateUrl: '/action/show/action.show.html',
+        templateUrl: 'action/show/action.show.html',
         controller: 'ShowActionCtrl as showActionVm',
       })
       .state('compare', {
         url: '/compare',
-        templateUrl: '/compare/compare.html',
+        templateUrl: 'compare/compare.html',
         controller: 'CompareCtrl as compareVm',
         params: {
           actionIds: {

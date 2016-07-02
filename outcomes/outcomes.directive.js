@@ -9,7 +9,7 @@
   function evOutcomes() {
     return {
       restrict: 'E',
-      templateUrl: '/outcomes/outcomes.directive.html',
+      templateUrl: 'outcomes/outcomes.directive.html',
       scope: {
         outcomes: '=',
         edit: '@',

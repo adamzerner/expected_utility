@@ -9,7 +9,7 @@
   function evCompareActionsChart() {
     return {
       restrict: 'E',
-      templateUrl: '/compare_actions_chart/compare_actions_chart.directive.html',
+      templateUrl: 'compare_actions_chart/compare_actions_chart.directive.html',
       scope: {
         categories: '=',
         data: '=',
