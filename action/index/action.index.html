@@ -31,12 +31,23 @@
         <span ng-click="indexActionVm.deleteAction(action.id)" class="glyphicon glyphicon-trash text-danger"></span>
       </td>
       <td>
-        <input type="checkbox">
+        <input type="checkbox" ng-model="indexActionVm.actionIds[$index]">
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <button
+          class="btn btn-default"
+          ng-click="indexActionVm.compare()"
+        >
+          Compare
+        </button>
       </td>
     </tr>
   </tbody>
 </table>
-
-<div>
-  <button class="btn btn-default pull-right">Compare</button>
-</div>

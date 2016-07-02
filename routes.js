@@ -35,6 +35,36 @@
         url: '/compare',
         templateUrl: '/compare/compare.html',
         controller: 'CompareCtrl as compareVm',
+        params: {
+          actionIds: {
+            array: true,
+          },
+        },
+        resolve: {
+          actions: function ($stateParams, ActionService) {
+            var actions = [];
+            for (var i = 0, len = $stateParams.actionIds.length; i < len; i++) {
+              actions.push(ActionService.actions[$stateParams.actionIds[i]]);
+            }
+            return actions;
+          },
+          actionsInfoContainer: function ($stateParams) {
+            var actionsInfoContainer = [];
+
+            for (var i = 0, len = $stateParams.actionIds.length; i < len; i++) {
+              actionsInfoContainer.push({});
+            }
+
+            return actionsInfoContainer;
+          },
+          actionNames: function ($stateParams, ActionService) {
+            var actionNames = [];
+            for (var i = 0, len = $stateParams.actionIds.length; i < len; i++) {
+              actionNames.push(ActionService.actions[$stateParams.actionIds[i]].name);
+            }
+            return actionNames;
+          },
+        },
       })
     ;
   }

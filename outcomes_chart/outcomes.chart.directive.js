@@ -16,11 +16,14 @@
       },
       controller: function ($scope, ChartService) {
         var newSeries;
+        var xAxisTitle;
         if ($scope.series) {
           $scope.chartData = ChartService.getChartData($scope.outcomes, 'simulation');
+          xAxisTitle = 'Number of occurrences';
         } else {
           $scope.series = [];
           $scope.chartData = ChartService.getChartData($scope.outcomes);
+          xAxisTitle = 'Probability of occurring';
         }
         newSeries = ChartService.makeSeries($scope.chartData);
         angular.copy(newSeries, $scope.series);
@@ -37,10 +40,14 @@
             xAxis: {
               tickLength: 0,
               labels: { enabled: false },
-              maxPadding: 0,
+              title: {
+                text: xAxisTitle,
+              },
             },
             yAxis: {
-              title: { enabled: false },
+              title: {
+                text: 'Expected Utility',
+              },
             },
             plotOptions: {
               area: {

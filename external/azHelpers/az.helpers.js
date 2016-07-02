@@ -309,7 +309,7 @@ $templateCache.put("navbar/navbar.directive.html","<nav\n  class=\"az-navbar pri
 
   function AzDebugModeService() {
     this.debugModeContainer = {
-      debugMode: false,
+      debugMode: true,
     };
   }
 })();

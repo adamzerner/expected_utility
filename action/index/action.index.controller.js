@@ -6,10 +6,10 @@
     .controller('IndexActionCtrl', IndexActionCtrl)
   ;
 
-  function IndexActionCtrl(ActionService, AzDialogService, ngDialog) {
+  function IndexActionCtrl(ActionService, AzDialogService, ngDialog, $state) {
     var vm = this;
     vm.actions = ActionService.actions;
-    vm.isOpen = new Array(false);
+    vm.actionIds = {};
     vm.deleteAction = function (id) {
       AzDialogService
         .confirm({
@@ -27,6 +27,16 @@
           outcomes: outcomes,
         },
       });
+    };
+    vm.compare = function () {
+      var actionIds = [];
+      for (var key in vm.actionIds) {
+        if (vm.actionIds[key]) {
+          actionIds.push(+key);
+        }
+      }
+
+      $state.go('compare', { actionIds: actionIds });
     };
   }
 })();

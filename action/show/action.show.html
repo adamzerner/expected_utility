@@ -11,44 +11,23 @@
       <div class="form-group">
         <label>Simulations To Run</label>
         <input
-        type="number"
-        class="form-control"
-        ng-model="showActionVm.simulationRunner.simulationsToRun"
-        min="1"
-        step="10"
+          type="number"
+          class="form-control"
+          ng-model="showActionVm.simulationsToRun"
+          min="1"
+          step="10"
         >
       </div>
       <button
-      type="button"
-      class="btn btn-default"
-      ng-click="showActionVm.simulationRunner.runSimulations()"
-      >Run Simulation<span ng-show="showActionVm.simulationRunner.simulationsToRun > 1">s</span></button>
+        type="button"
+        class="btn btn-default"
+        ng-click="showActionVm.runSimulations()"
+      >Run Simulation<span ng-show="showActionVm.simulationsToRun > 1">s</span></button>
     </div>
 
     <hr />
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Total Utilons</th>
-          <th>Simulations Ran</th>
-          <th>Average Utilons</th>
-          <th ng-repeat="outcome in showActionVm.simulationData.outcomes">
-            {{ outcome.name }}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ showActionVm.simulationData.totalUtilons | number }}</td>
-          <td>{{ showActionVm.simulationData.simulationsRan | number }}</td>
-          <td>{{ (showActionVm.simulationData.totalUtilons / showActionVm.simulationData.simulationsRan) | number }}</td>
-          <td ng-repeat="outcome in showActionVm.simulationData.outcomes">
-            {{ outcome.count | number }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <ev-simulation-table simulation-data="showActionVm.simulationData"></ev-simulation-table>
   </div>
 </div>
 

@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Total Utilons</th>
+      <th>Simulations Ran</th>
+      <th>Average Utilons</th>
+      <th ng-repeat="outcome in simulationData.outcomes">
+        {{ outcome.name }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ simulationData.totalUtilons | number }}</td>
+      <td>{{ simulationData.simulationsRan | number }}</td>
+      <td>{{ (simulationData.totalUtilons / simulationData.simulationsRan) | number }}</td>
+      <td ng-repeat="outcome in simulationData.outcomes">
+        {{ outcome.count | number }}
+      </td>
+    </tr>
+  </tbody>
+</table>
