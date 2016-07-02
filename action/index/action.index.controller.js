@@ -32,11 +32,14 @@
       var actionIds = [];
       for (var key in vm.actionIds) {
         if (vm.actionIds[key]) {
-          actionIds.push(+key);
+          actionIds.push(key);
         }
       }
 
       $state.go('compare', { actionIds: actionIds });
+    };
+    vm.actionsEmpty = function () {
+      return !vm.actions || Object.keys(vm.actions).length === 0;
     };
   }
 })();

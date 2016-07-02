@@ -7,8 +7,8 @@
   expectedUtility.death = null;
 
   var driving = {
-    0: {
-      id: 0,
+    123: {
+      id: 123,
       name: 'Drive with Colt (drunk)',
       expectedUtility: null,
       probabilityRangeArray: null,
@@ -29,8 +29,8 @@
       ],
     },
 
-    1: {
-      id: 1,
+    456: {
+      id: 456,
       name: 'Drive with Alex (high)',
       expectedUtility: null,
       probabilityRangeArray: null,
@@ -51,8 +51,8 @@
       ],
     },
 
-    2: {
-      id: 2,
+    789: {
+      id: 789,
       name: 'Drive with Jake (sober)',
       expectedUtility: null,
       probabilityRangeArray: null,
@@ -73,8 +73,8 @@
       ],
     },
 
-    3: {
-      id: 0,
+    987: {
+      id: 987,
       name: 'Drive with Adam (not a good driver + no license)',
       expectedUtility: null,
       probabilityRangeArray: null,
@@ -97,8 +97,8 @@
   };
 
   var livingOptions = {
-    0: {
-      id: 0,
+    'f93657c1-4740-4ecb-b7fe-6030214a4d50': {
+      id: 'f93657c1-4740-4ecb-b7fe-6030214a4d50',
       name: 'Thailand',
       expectedUtility: 67,
       probabilityRangeArray: [
@@ -129,8 +129,8 @@
       ],
     },
 
-    1: {
-      id: 1,
+    'eabb782d-ac14-47c0-9e75-cce9eefbffd5': {
+      id: 'eabb782d-ac14-47c0-9e75-cce9eefbffd5',
       name: 'Vegas',
       expectedUtility: 64,
       probabilityRangeArray: [
@@ -161,8 +161,8 @@
       ],
     },
 
-    2: {
-      id: 2,
+    'c3089868-679f-4d81-b653-0900aca5a1c5': {
+      id: 'c3089868-679f-4d81-b653-0900aca5a1c5',
       name: 'Home in NY',
       expectedUtility: 48,
       probabilityRangeArray: [
