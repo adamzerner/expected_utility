@@ -12,7 +12,7 @@
       templateUrl: '/outcomes/outcomes.directive.html',
       scope: {
         outcomes: '=',
-        remove: '@',
+        edit: '@',
       },
       controller: function ($scope) {
         $scope.removeOutcome = function (index) {

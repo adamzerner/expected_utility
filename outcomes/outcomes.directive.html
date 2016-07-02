@@ -5,17 +5,34 @@
     No outcomes have been added.
   </p>
 
-  <ul class="list-group">
+  <ul class="list-group" ng-if="edit !== 'true'">
     <li class="list-group-item" ng-repeat="outcome in outcomes">
       <p><strong>Name: </strong>{{ outcome.name }}</p>
       <p><strong>Expected Utility: </strong>{{ outcome.expectedUtility }}</p>
       <p><strong>Probability of Occurring: </strong>{{ outcome.probability }}</p>
-      <p ng-if="remove === 'true'">
+    </li>
+  </ul>
+
+  <ul class="list-group" ng-if="edit === 'true'">
+    <li class="list-group-item" ng-repeat="outcome in outcomes">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" ng-model="outcome.name">
+      </div>
+      <div class="form-group">
+        <label>Expected Utility</label>
+        <input type="text" class="form-control" ng-model="outcome.expectedUtility">
+      </div>
+      <div class="form-group">
+        <label>Probability of Occurring</label>
+        <input type="text" class="form-control" ng-model="outcome.probability">
+      </div>
+      <p>
         <button
           class="btn btn-danger btn-xs"
           type="button"
           ng-click="removeOutcome($index)"
-        >
+          >
           Remove Outcome
         </button>
       </p>
