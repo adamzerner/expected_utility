@@ -4,7 +4,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3>Simulations</h3>
+    <h3>Simulator</h3>
   </div>
   <div class="panel-body">
     <div>
@@ -15,7 +15,7 @@
           class="form-control"
           ng-model="showActionVm.simulationsToRun"
           min="1"
-          step="10"
+          step="1"
         >
       </div>
       <button
@@ -24,22 +24,37 @@
         ng-click="showActionVm.runSimulations()"
       >Run Simulation<span ng-show="showActionVm.simulationsToRun > 1">s</span></button>
     </div>
+  </div>
+</div>
 
-    <hr />
-
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Table of Simulated Outcomes</h3>
+  </div>
+  <div class="panel-body">
     <ev-simulation-table simulation-data="showActionVm.simulationData"></ev-simulation-table>
   </div>
 </div>
 
-
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3>Chart of Outcomes</h3>
+    <h3>Chart of Simulated Outcomes</h3>
   </div>
   <div class="panel-body">
     <ev-outcomes-chart
       outcomes="showActionVm.action.outcomes"
       series="showActionVm.series"
+    ></ev-outcomes-chart>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Chart of Expected Outcomes</h3>
+  </div>
+  <div class="panel-body">
+    <ev-outcomes-chart
+      outcomes="showActionVm.action.outcomes"
     ></ev-outcomes-chart>
   </div>
 </div>

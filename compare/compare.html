@@ -4,7 +4,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3>Simulations</h3>
+    <h3>Simulator</h3>
   </div>
   <div class="panel-body">
     <div>
@@ -15,7 +15,7 @@
           class="form-control"
           ng-model="compareVm.simulationsToRun"
           min="1"
-          step="10"
+          step="1"
         >
       </div>
       <button
@@ -24,9 +24,14 @@
         ng-click="compareVm.runSimulations()"
       >Run Simulation<span ng-show="compareVm.simulationsToRun > 1">s</span></button>
     </div>
+  </div>
+</div>
 
-    <hr />
-
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Table of Simulation Results</h3>
+  </div>
+  <div class="panel-body">
     <table class="table">
       <thead>
         <tr>
@@ -45,9 +50,14 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
 
-    <hr />
-
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3>Chart of Simulation Results</h3>
+  </div>
+  <div class="panel-body">
     <ev-compare-actions-chart
       categories="compareVm.actionNames"
       data="compareVm.averageUtilonsArray"
@@ -57,7 +67,7 @@
 
 <div class="panel panel-default" ng-repeat="actionInfo in compareVm.actionsInfoContainer">
   <div class="panel-heading">
-    <h3>{{ actionInfo.name }}</h3>
+    <h3>{{ actionInfo.name }} - Breakdown of Results</h3>
   </div>
   <div class="panel-body">
     <ev-outcomes-chart
