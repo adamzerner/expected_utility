@@ -15,6 +15,9 @@
       }, {
         text: 'Create An Action',
         state: 'create',
+      }, {
+        text: 'About',
+        state: 'about',
       },
     ];
   }
