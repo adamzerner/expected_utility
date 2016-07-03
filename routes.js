@@ -66,6 +66,10 @@
           },
         },
       })
+      .state('about', {
+        url: '/about',
+        templateUrl: 'about/about.html',
+      })
     ;
   }
 })();
